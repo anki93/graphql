@@ -2,7 +2,8 @@
 const {
   GraphQLObjectType,
   GraphQLNonNull,
-  GraphQLString
+  GraphQLString,
+  GraphQLID
 } = require("graphql")
 
 const { 
@@ -17,7 +18,7 @@ module.exports = {
       type: messageType,
       args: {
         id : {
-          type: GraphQLString 
+          type: GraphQLID 
         },
       }
     },

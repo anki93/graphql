@@ -1,5 +1,6 @@
 
 const {
+  GraphQLID,
   GraphQLString,
   GraphQLNonNull,
   GraphQLObjectType,
@@ -13,7 +14,7 @@ module.exports =  {
     name:"Message",
     fields: {
       id: {
-        type: GraphQLString
+        type: GraphQLID
       },
       content: {
         type: GraphQLString
