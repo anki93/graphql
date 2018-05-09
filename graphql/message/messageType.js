@@ -21,6 +21,9 @@ module.exports =  {
       },
       author: {
         type: GraphQLString
+      },
+      email: {
+        type: GraphQLString
       }
     }
   }),
@@ -32,6 +35,9 @@ module.exports =  {
         type: new GraphQLNonNull(GraphQLString),
       },
       author: {
+        type: new GraphQLNonNull(GraphQLString)
+      },
+      email: {
         type: new GraphQLNonNull(GraphQLString)
       }
     }

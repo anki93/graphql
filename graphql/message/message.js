@@ -11,6 +11,8 @@ const {
   messageInputType
 } = require("./messageType")
 
+const validator = require('validator');
+ 
 module.exports = {
 
   messageQuery: {
@@ -32,6 +34,22 @@ module.exports = {
         input: {
           type: messageInputType
         }
+      },
+      resolve: async (rootValue, { input }) => {
+
+        if(validator.isEmpty(input.content)) {
+          throw new Error('Content is required.');
+        }
+
+        if(validator.isEmpty(input.author)) {
+          throw new Error('Author is required.');
+        }
+          
+        if (!validator.isEmail(input.email)) {
+          throw new Error('Email is not in valid format');
+        }
+        
+        return rootValue.createMessage({ input })
       }
     }
 
